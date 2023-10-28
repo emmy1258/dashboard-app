@@ -2,7 +2,6 @@
 import { Fragment, useContext, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import {
-  ArrowLeftOnRectangleIcon,
   Bars3Icon,
   CalendarIcon,
   ChartBarIcon,
@@ -17,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 import Authentication from "../auth";
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
+  { name: "Dashboard", href: "/dashboard", icon: HomeIcon, current: true },
   { name: "Team", href: "#", icon: UsersIcon, current: false },
   { name: "Projects", href: "#", icon: FolderIcon, current: false },
   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
@@ -73,7 +72,7 @@ export default function DashboardLayout() {
                 leaveFrom="translate-x-0"
                 leaveTo="-translate-x-full"
               >
-                <Dialog.Panel className="relative flex w-full max-w-xs flex-1 flex-col bg-indigo-700">
+                <Dialog.Panel className="relative flex w-full max-w-xs flex-1 flex-col bg-gray-700">
                   <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-300"
@@ -101,7 +100,7 @@ export default function DashboardLayout() {
                     <div className="flex flex-shrink-0 items-center px-4">
                       <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
+                        src="https://tailwindui.com/img/logos/mark.svg?color=gray&shade=300"
                         alt="Your Company"
                       />
                     </div>
@@ -112,13 +111,13 @@ export default function DashboardLayout() {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? "bg-indigo-800 text-white"
-                              : "text-white hover:bg-indigo-600 hover:bg-opacity-75",
+                              ? "bg-gray-800 text-white"
+                              : "text-white hover:bg-gray-600 hover:bg-opacity-75",
                             "group flex items-center px-2 py-2 text-base font-medium rounded-md"
                           )}
                         >
                           <item.icon
-                            className="mr-4 h-6 w-6 flex-shrink-0 text-indigo-300"
+                            className="mr-4 h-6 w-6 flex-shrink-0 text-gray-300"
                             aria-hidden="true"
                           />
                           {item.name}
@@ -128,7 +127,7 @@ export default function DashboardLayout() {
                   </div>
                   <button
                     onClick={() => setIsAuth(false)}
-                    className="flex flex-shrink-0 border-t border-indigo-800 p-4"
+                    className="flex flex-shrink-0 border-t border-gray-800 p-4"
                   >
                     <a href="#" className="group block w-full flex-shrink-0">
                       <div className="flex items-center">
@@ -155,12 +154,12 @@ export default function DashboardLayout() {
         {/* Static sidebar for desktop */}
         <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex min-h-0 flex-1 flex-col bg-indigo-700">
+          <div className="flex min-h-0 flex-1 flex-col bg-gray-700">
             <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
               <div className="flex flex-shrink-0 items-center px-4">
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=gray&shade=300"
                   alt="Your Company"
                 />
               </div>
@@ -171,13 +170,13 @@ export default function DashboardLayout() {
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-indigo-800 text-white"
-                        : "text-white hover:bg-indigo-600 hover:bg-opacity-75",
+                        ? "bg-gray-800 text-white"
+                        : "text-white hover:bg-gray-600 hover:bg-opacity-75",
                       "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                     )}
                   >
                     <item.icon
-                      className="mr-3 h-6 w-6 flex-shrink-0 text-indigo-300"
+                      className="mr-3 h-6 w-6 flex-shrink-0 text-gray-300"
                       aria-hidden="true"
                     />
                     {item.name}
@@ -187,7 +186,7 @@ export default function DashboardLayout() {
             </div>
             <button
               onClick={() => setIsAuth(false)}
-              className="flex flex-shrink-0 border-t border-indigo-800 p-4"
+              className="flex flex-shrink-0 border-t border-gray-800 p-4"
             >
               <a href="#" className="group block w-full flex-shrink-0">
                 <div className="flex items-center">
@@ -206,7 +205,7 @@ export default function DashboardLayout() {
           <div className="sticky top-0 z-10 bg-gray-100 pl-1 pt-1 sm:pl-3 sm:pt-3 md:hidden">
             <button
               type="button"
-              className="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              className="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
               onClick={() => setSidebarOpen(true)}
             >
               <span className="sr-only">Open sidebar</span>

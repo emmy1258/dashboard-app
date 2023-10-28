@@ -28,9 +28,9 @@ export default function InputRadio({ value, handleChange }) {
               className={({ active, checked }) =>
                 classNames(
                   "cursor-pointer focus:outline-none overflow-hidden",
-                  active ? "ring-2 ring-offset-2 ring-indigo-500" : "",
+                  active ? "ring-2 ring-offset-2 ring-sky-500" : "",
                   checked
-                    ? "bg-indigo-600 border-transparent text-white hover:bg-indigo-700"
+                    ? "bg-sky-600 border-transparent text-white hover:bg-sky-700"
                     : "bg-white border-gray-200 text-gray-900 hover:bg-gray-50",
                   "border rounded-md py-3 px-8 flex items-center justify-center text-sm font-medium uppercase sm:flex-1"
                 )
