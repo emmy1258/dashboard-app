@@ -31,6 +31,8 @@ export default function FormSignUp() {
       });
   };
 
+  const options = ["Laayoune", "Rabat", "Agadir"];
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -59,7 +61,12 @@ export default function FormSignUp() {
         value={password}
         handleChange={setPassword}
       />
-      <InputSelect value={city} handleChange={setCity} name="city" />
+      <InputSelect
+        value={city}
+        handleChange={setCity}
+        name="city"
+        options={options}
+      />
       <InputRadio value={gender} handleChange={setGender} />
       <div>
         <button

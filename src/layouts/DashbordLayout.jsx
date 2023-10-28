@@ -5,6 +5,7 @@ import {
   Bars3Icon,
   CalendarIcon,
   ChartBarIcon,
+  DocumentPlusIcon,
   FolderIcon,
   HomeIcon,
   InboxIcon,
@@ -12,23 +13,24 @@ import {
   UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Authentication from "../auth";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: InboxIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
+  {
+    name: "Add Product",
+    href: "/dashboard/add",
+    icon: DocumentPlusIcon,
+    current: false,
+  },
 ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function DashboardLayout() {
+export default function DashboardLayout({ children }) {
   const [isAuth, setIsAuth] = useContext(Authentication);
 
   const navigate = useNavigate();
@@ -105,9 +107,9 @@ export default function DashboardLayout() {
                     </div>
                     <nav className="mt-5 space-y-1 px-2">
                       {navigation.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
-                          href={item.href}
+                          to={item.href}
                           className={classNames(
                             item.current
                               ? "bg-gray-800 text-white"
@@ -120,7 +122,7 @@ export default function DashboardLayout() {
                             aria-hidden="true"
                           />
                           {item.name}
-                        </a>
+                        </Link>
                       ))}
                     </nav>
                   </div>
@@ -162,9 +164,9 @@ export default function DashboardLayout() {
               </div>
               <nav className="mt-5 flex-1 space-y-1 px-2">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className={classNames(
                       item.current
                         ? "bg-gray-800 text-white"
@@ -177,7 +179,7 @@ export default function DashboardLayout() {
                       aria-hidden="true"
                     />
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>
@@ -212,15 +214,8 @@ export default function DashboardLayout() {
           <main className="flex-1">
             <div className="py-6">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                <h1 className="text-2xl font-semibold text-gray-900">
-                  Dashboard
-                </h1>
-              </div>
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
                 {/* Replace with your content */}
-                <div className="py-4">
-                  <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
-                </div>
+                <div className="py-4">{children}</div>
                 {/* /End replace */}
               </div>
             </div>

@@ -1,10 +1,7 @@
-export default function InputSelect({name, value, handleChange}) {
+export default function InputSelect({ name, value, handleChange, options }) {
   return (
     <div>
-      <label
-        htmlFor={name}
-        className="block text-sm font-medium text-gray-700"
-      >
+      <label htmlFor={name} className="block text-sm font-medium text-gray-700">
         City
       </label>
       <select
@@ -13,9 +10,11 @@ export default function InputSelect({name, value, handleChange}) {
         value={value}
         onChange={(e) => handleChange(e.target.value)}
       >
-        <option value="laayoune">Laayoune</option>
-        <option value="rabat">Rabat</option>
-        <option value="agadir">Agadir</option>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
       </select>
     </div>
   );
