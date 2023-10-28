@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "username": "jhgsj",
+      "name": "",
+      "email": "jgjdgj@hfhf.dlfhj",
+      "password": "kjgfkjgdsj",
+      "city": "laayoune",
+      "gender": "Male",
+      "id": 1
+    },
+    {
+      "username": "jhgsj",
+      "name": "",
+      "email": "jgjdgj@hfhf.dlfhj",
+      "password": "kjgfkjgdsj",
+      "city": "laayoune",
+      "gender": "Male",
+      "id": 2
+    },
+    {
+      "username": "jhgsj",
+      "email": "jgjdgj@hfhf.dlfhj",
+      "password": "kjgfkjgdsj",
+      "city": "laayoune",
+      "gender": "Male",
+      "id": 3
+    },
+    {
+      "username": "emmy123",
+      "email": "emmy@gmail.com",
+      "password": "123456",
+      "city": "rabat",
+      "gender": "Female",
+      "id": 4
+    },
+    {
+      "username": "fahd13",
+      "email": "fahdahsayni@gmail.com",
+      "password": "123456",
+      "city": "laayoune",
+      "gender": "Male",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
