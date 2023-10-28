@@ -14,7 +14,7 @@ export default function FormLogin() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:8000/users?email=${email}`)
+    fetch(`https://api-dashboard-app.vercel.app/users?email=${email}`)
       .then((res) => {
         return res.json();
       })

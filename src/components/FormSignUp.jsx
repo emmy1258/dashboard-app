@@ -1,6 +1,5 @@
 import { useState } from "react";
 import InputNormal from "./inputs/InputNormal";
-import { useEffect } from "react";
 import InputSelect from "./inputs/InputSelect";
 import InputRadio from "./inputs/InputRadio";
 import { toast } from "react-toastify";
@@ -18,7 +17,7 @@ export default function FormSignUp() {
     e.preventDefault();
     const infoUser = { username, email, password, city, gender };
 
-    fetch("http://localhost:8000/users", {
+    fetch("https://api-dashboard-app.vercel.app/users", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(infoUser),
