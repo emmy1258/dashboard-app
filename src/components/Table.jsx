@@ -179,7 +179,7 @@ export default function Table() {
               <p className="text-gray-700 px-2">
                 {currentPage} of {totalPageCount} pages
               </p>
-              <div className="space-x-4">
+              <div className="space-x-4 flex items-center mt-2.5 justify-center">
                 <button
                   className="inline-flex items-center justify-center rounded-md border border-sky-500 hover:border-sky-700 bg-transparent px-4 py-2 text-sm font-medium text-sky-500 shadow-sm hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 sm:w-auto"
                   onClick={() => paginate(currentPage - 1)}

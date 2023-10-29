@@ -6,6 +6,7 @@ import {
   DocumentPlusIcon,
   HomeIcon,
   PowerIcon,
+  PresentationChartBarIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,6 +18,12 @@ const navigation = [
     name: "Add Product",
     href: "/dashboard/add",
     icon: DocumentPlusIcon,
+    current: false,
+  },
+  {
+    name: "Add Product",
+    href: "/dashboard/analytics",
+    icon: PresentationChartBarIcon,
     current: false,
   },
 ];

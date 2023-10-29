@@ -1,6 +1,12 @@
+import LineChart from "../components/LineChart";
+import DashboardLayout from "../layouts/DashbordLayout";
 
 export default function AnalysePage() {
   return (
-    <div>AnalysePage</div>
-  )
+    <DashboardLayout>
+      <div className="w-full p-5 bg-white">
+        <LineChart />
+      </div>
+    </DashboardLayout>
+  );
 }
