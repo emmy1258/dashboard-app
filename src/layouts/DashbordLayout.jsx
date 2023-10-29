@@ -3,14 +3,9 @@ import { Fragment, useContext, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
-  CalendarIcon,
-  ChartBarIcon,
   DocumentPlusIcon,
-  FolderIcon,
   HomeIcon,
-  InboxIcon,
   PowerIcon,
-  UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Link, useNavigate } from "react-router-dom";

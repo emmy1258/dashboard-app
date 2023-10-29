@@ -1,5 +1,6 @@
 import AddProductPage from "../views/AddProductPage";
 import DashboardPage from "../views/DashboardPage";
+import EditProduct from "../views/EditProduct";
 import LoginPage from "../views/LoginPage";
 import NotFoundPage from "../views/NotFoundPage";
 import RegisterPage from "../views/RegisterPage";
@@ -24,5 +25,9 @@ export default [
   {
     path: "/Dashboard/add",
     element: <AddProductPage />,
+  },
+  {
+    path: "/Dashboard/edit/:id",
+    element: <EditProduct />,
   },
 ];

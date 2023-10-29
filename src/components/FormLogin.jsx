@@ -36,8 +36,6 @@ export default function FormLogin() {
     <form
       onSubmit={handleSubmit}
       className="space-y-6"
-      action="#"
-      method="POST"
     >
       <InputNormal
         type="email"

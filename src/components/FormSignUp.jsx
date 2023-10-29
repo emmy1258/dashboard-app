@@ -34,12 +34,7 @@ export default function FormSignUp() {
   const options = ["Laayoune", "Rabat", "Agadir"];
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-6"
-      action="#"
-      method="POST"
-    >
+    <form onSubmit={handleSubmit} className="space-y-6">
       <InputNormal
         type="text"
         name="username"
