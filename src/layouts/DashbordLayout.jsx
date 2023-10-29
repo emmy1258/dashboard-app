@@ -21,7 +21,7 @@ const navigation = [
     current: false,
   },
   {
-    name: "Add Product",
+    name: "Analytics",
     href: "/dashboard/analytics",
     icon: PresentationChartBarIcon,
     current: false,
