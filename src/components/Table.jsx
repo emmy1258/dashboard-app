@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Quantity from "./Quantity";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import axios from "axios";
 
 export default function Table() {
   const [products, setProducts] = useState([]);
@@ -10,8 +11,8 @@ export default function Table() {
   const [itemsPerPage] = useState(5);
 
   const getData = async () => {
-    const res = await fetch("https://api-dashboard-app.vercel.app/products");
-    const data = await res.json();
+    const res = await axios.get("https://api-dashboard-app.vercel.app/products");
+    const data = await res.data;
 
     setProducts(data);
   };
@@ -65,9 +66,8 @@ export default function Table() {
           </Link>
         </div>
       </div>
-      <div className="pt-6 pb-2.5 w-1/3">
+      <div className="pt-6 pb-2.5 md:w-1/2 lg:w-1/3 w-full">
         <label
-          htmlFor="search"
           className="block text-sm font-medium text-gray-700"
         >
           Quick search
@@ -175,28 +175,28 @@ export default function Table() {
                 </tbody>
               </table>
             </div>
-            <div className="w-full flex space-x-4 justify-between items-center mt-5">
-              <p className="text-gray-700 px-2">
-                {currentPage} of {totalPageCount} pages
-              </p>
-              <div className="space-x-4 flex items-center mt-2.5 justify-center">
-                <button
-                  className="inline-flex items-center justify-center rounded-md border border-sky-500 hover:border-sky-700 bg-transparent px-4 py-2 text-sm font-medium text-sky-500 shadow-sm hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 sm:w-auto"
-                  onClick={() => paginate(currentPage - 1)}
-                  disabled={currentPage === 1}
-                >
-                  Previous
-                </button>
-                <button
-                  className="inline-flex items-center justify-center rounded-md border border-transparent bg-sky-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 sm:w-auto"
-                  onClick={() => paginate(currentPage + 1)}
-                  disabled={currentPage >= totalPageCount}
-                >
-                  Next
-                </button>
-              </div>
-            </div>
           </div>
+        </div>
+      </div>
+      <div className="w-full flex space-x-4 justify-between items-center mt-5">
+        <p className="text-gray-700 px-2">
+          {currentPage} of {totalPageCount} pages
+        </p>
+        <div className="space-x-4 flex items-center mt-2.5 justify-center">
+          <button
+            className="inline-flex items-center justify-center rounded-md border border-sky-500 hover:border-sky-700 bg-transparent px-4 py-2 text-sm font-medium text-sky-500 shadow-sm hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 sm:w-auto"
+            onClick={() => paginate(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <button
+            className="inline-flex items-center justify-center rounded-md border border-transparent bg-sky-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 sm:w-auto"
+            onClick={() => paginate(currentPage + 1)}
+            disabled={currentPage >= totalPageCount}
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>

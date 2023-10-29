@@ -35,8 +35,8 @@ const data = {
 
 const LineChart = () => {
   return (
-    <div>
-      <Bar data={data} />
+    <div className="h-full w-full">
+      <Bar className="h-[600px]" data={data} />
     </div>
   );
 };
